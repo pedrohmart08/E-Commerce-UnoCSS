@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UnoShop - Pedido Confirmado</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.css">
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.css">
+
+    <script type="module">
+        import presetUno from 'https://cdn.jsdelivr.net/npm/@unocss/preset-uno/+esm'
+        import presetIcons from 'https://cdn.jsdelivr.net/npm/@unocss/preset-icons/+esm'
+        import presetTypography from 'https://cdn.jsdelivr.net/npm/@unocss/preset-typography/+esm'
+
+        window.__unocss = {
+            presets: [
+                presetUno(),
+                presetIcons({
+                    scale: 1.2,
+                    cdn: 'https://esm.sh/' 
+                }),
+                presetTypography(),
+            ],
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+
+    <div class="bg-white p-10 rounded-2xl shadow-xl w-full max-w-lg text-center border border-green-100 relative overflow-hidden">
+        
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-green-50 rounded-full opacity-50 pointer-events-none"></div>
+        <!-- Isso aqui é maneirão de mostrar, tipo uns efeitos visuais que da pra fazer sem esforço  -->
+        <div class="inline-flex items-center justify-center w-24 h-24 bg-green-100 rounded-full mb-6 animate-bounce">
+            <div class="i-mdi-check-circle text-6xl text-green-600"></div>
+        </div>
+
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Pedido Realizado!</h1>
+        <p class="text-gray-500 mb-8">Obrigado pela compra. Enviamos a confirmação para o seu e-mail.</p>
+
+        <div class="bg-gray-50 rounded-lg p-4 mb-8 text-left border border-gray-200">
+            <div class="flex justify-between text-sm mb-2">
+                <span class="text-gray-500">Número do Pedido:</span>
+                <span class="font-bold text-gray-800">#UNO-9821</span>
+            </div>
+            <div class="flex justify-between text-sm mb-2">
+                <span class="text-gray-500">Data:</span>
+                <span class="font-bold text-gray-800">04/12/2025</span>
+            </div>
+            <div class="flex justify-between text-sm mb-2">
+                <span class="text-gray-500">Forma de Pagamento:</span>
+                <span class="font-bold text-gray-800">Cartão de Crédito</span>
+            </div>
+             <div class="flex justify-between text-sm pt-2 border-t border-gray-200 mt-2">
+                <span class="text-gray-500">Total Pago:</span>
+                <span class="font-bold text-green-600">R$ 2.740,00</span>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+            <a href="index.html" class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition shadow-lg">
+                Voltar para a Loja
+            </a>
+            <a href="#" class="w-full text-purple-600 font-medium py-2 hover:bg-purple-50 rounded-lg transition">
+                Acompanhar Pedido
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

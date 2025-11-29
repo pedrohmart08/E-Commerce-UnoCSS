@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UnoShop - Detalhes do Produto</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.css">
+
+    <script type="module">
+        import presetUno from 'https://cdn.jsdelivr.net/npm/@unocss/preset-uno/+esm'
+        import presetIcons from 'https://cdn.jsdelivr.net/npm/@unocss/preset-icons/+esm'
+        import presetTypography from 'https://cdn.jsdelivr.net/npm/@unocss/preset-typography/+esm'
+
+        window.__unocss = {
+            presets: [
+                presetUno(),
+                presetIcons({
+                    scale: 1.2,
+                    cdn: 'https://esm.sh/' 
+                }),
+                presetTypography(),
+            ],
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-gray-50 text-gray-900 font-sans flex flex-col">
+
+    <header class="w-full bg-purple-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="i-mdi-shopping text-3xl"></div> 
+                <h1 class="text-2xl font-bold tracking-wide">UnoShop</h1>
+            </div>
+            <div class="flex-1 max-w-md hidden md:flex">
+                <input type="text" placeholder="Buscar produtos..." 
+                       class="w-full px-4 py-2 rounded-l-lg text-gray-900 border-none outline-none">
+                <button class="bg-purple-900 px-4 py-2 rounded-r-lg hover:bg-purple-800 transition flex items-center">
+                    <div class="i-mdi-magnify text-xl"></div>
+                </button>
+            </div>
+            <nav class="flex gap-6 text-sm font-medium items-center">
+                <a href="index.html" class="hover:text-purple-200 flex flex-col items-center gap-1">
+                    <div class="i-mdi-home text-xl"></div>
+                    <span class="hidden sm:block">Home</span>
+                </a>
+                <a href="login.html" class="hover:text-purple-200 flex flex-col items-center gap-1">
+                    <div class="i-mdi-account text-xl"></div>
+                    <span class="hidden sm:block">Login</span>
+                </a>
+                <a href="carrinho.html" class="hover:text-purple-200 flex flex-col items-center gap-1 relative">
+                    <div class="i-mdi-cart text-xl"></div>
+                    <span class="hidden sm:block">Carrinho</span>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">1</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow">
+        
+        <nav class="text-sm text-gray-500 mb-6 flex items-center gap-2">
+            <a href="index.html" class="hover:text-purple-700">Home</a>
+            <div class="i-mdi-chevron-right text-lg"></div>
+            <span>Eletrônicos</span>
+            <div class="i-mdi-chevron-right text-lg"></div>
+            <span class="text-purple-700 font-bold">Smartphone Uno X</span>
+        </nav>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=880&auto=format&fit=crop" 
+                     alt="Smartphone" 
+                     class="w-full h-auto rounded-lg object-cover hover:scale-105 transition duration-500" />
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Smartphone Uno X 256GB</h1>
+                    <div class="flex items-center gap-2 mt-2">
+                        <div class="flex text-yellow-400">
+                            <div class="i-mdi-star"></div>
+                            <div class="i-mdi-star"></div>
+                            <div class="i-mdi-star"></div>
+                            <div class="i-mdi-star"></div>
+                            <div class="i-mdi-star-half"></div>
+                        </div>
+                        <span class="text-gray-500 text-sm">(45 avaliações)</span>
+                    </div>
+                </div>
+
+                <div class="border-t border-b border-gray-200 py-4">
+                    <span class="text-gray-500 text-sm line-through">R$ 1.890,00</span>
+                    <div class="text-4xl font-bold text-purple-700">R$ 1.690,00</div>
+                    <p class="text-green-600 text-sm font-semibold mt-1">10x de R$ 169,00 sem juros</p>
+                </div>
+
+                <p class="text-gray-600 leading-relaxed">
+                    O Smartphone Uno X combina design premium com alta performance. 
+                    Equipado com o processador mais rápido da categoria, 8GB de RAM e 
+                    câmeras que capturam fotos incríveis mesmo com pouca luz.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                     <label for="quantity" class="text-sm font-medium"></label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="5"class="border rounded px-2 py-1 w-20 outline-none focus:border-blue-500"/>
+
+                    <button class="flex-1 bg-purple-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-purple-700 transition flex items-center justify-center gap-2">
+                        <div class="i-mdi-cart text-xl"></div>
+                        <a href="carrinho.html">Adicionar ao Carrinho</a>
+                    </button>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg mt-4 text-sm space-y-2">
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Marca:</span>
+                        <span class="font-bold">Uno Tech</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Cor:</span>
+                        <span class="font-bold">Azul Meia-noite</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Garantia:</span>
+                        <span class="font-bold">12 Meses</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-full bg-gray-900 text-gray-400 py-8 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <h4 class="text-white font-bold text-lg">UnoShop</h4>
+                <p class="text-sm mt-1">Sua loja favorita de eletrônicos.</p>
+            </div>
+            <p class="text-sm text-center">© 2025 UnoCSS Shop</p>
+        </div>
+    </footer>
+
+</body>
+</html>

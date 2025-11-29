@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UnoCSS Shop - Home</title>
+
+    <!-- Explicar essa parada é importante. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.css">
+
+    <script type="module">
+        import presetUno from 'https://cdn.jsdelivr.net/npm/@unocss/preset-uno/+esm'
+        import presetIcons from 'https://cdn.jsdelivr.net/npm/@unocss/preset-icons/+esm'
+        import presetTypography from 'https://cdn.jsdelivr.net/npm/@unocss/preset-typography/+esm'
+
+        window.__unocss = {
+            presets: [
+                presetUno(),
+                presetIcons({
+                    scale: 1.2,
+                    cdn: 'https://esm.sh/' 
+                }),
+                presetTypography(),
+            ],
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-gray-50 text-gray-900 font-sans flex flex-col">
+
+    <header class="w-full bg-purple-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-2">
+                <div class="i-mdi-shopping text-3xl"></div> 
+                <h1 class="text-2xl font-bold tracking-wide">UnoShop</h1>
+            </div>
+
+            <div class="flex-1 max-w-md hidden md:flex">
+                <input type="text" placeholder="Buscar produtos..." 
+                       class="w-full px-4 py-2 rounded-l-lg text-gray-900 border-none focus:ring-2 focus:ring-purple-300 outline-none">
+                <button class="bg-purple-900 px-4 py-2 rounded-r-lg hover:bg-purple-800 transition flex items-center">
+                    <div class="i-bx-navigation text-xl"></div>
+                </button>
+            </div>
+
+            <nav class="flex gap-6 text-sm font-medium items-center">
+                <a href="index.html" class="hover:text-purple-200 flex flex-col items-center gap-1">
+                    <div class="i-bx-store text-xl"></div>
+                    <span class="hidden sm:block">Home</span>
+                </a>
+                <a href="login.html" class="hover:text-purple-200 flex flex-col items-center gap-1">
+                    <div class="i-bx-user text-xl"></div>
+                    <span class="hidden sm:block">Login</span>
+                </a>
+                <a href="carrinho.html" class="hover:text-purple-200 flex flex-col items-center gap-1 relative">
+                    <div class="i-bx-cart-alt text-xl"></div>
+                    <span class="hidden sm:block">Carrinho</span>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">1</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+<!-- Explicar essa parte é legal, eu acho. -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16 px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Black Friday Uno</h2>
+        <p class="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">Aproveite as melhores ofertas de tecnologia com entrega rápida para todo o Brasil.</p>
+        <button class="bg-white text-purple-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 hover:scale-105 transition transform">
+            Ver Ofertas
+        </button>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 flex-grow">
+
+        <h2 class="text-2xl font-bold mb-8 text-gray-800 flex items-center gap-2">
+            Produtos em Destaque
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=880&auto=format&fit=crop" alt="Smartphone" class="w-full h-56 object-cover" />
+                <div class="p-5">
+                    <h3 class="font-bold text-lg text-gray-800">Smartphone Uno X</h3>
+                    <p class="text-gray-500 text-sm mt-2 line-clamp-2">Smartphone com 8GB RAM e 256GB. Câmera de alta resolução.</p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-2xl font-bold text-purple-700">R$ 1.690</span>
+                        <div class="flex gap-2">
+                            <button class="p-2 bg-gray-100 text-purple-700 rounded-lg hover:bg-purple-50" title="Adicionar ao Carrinho">
+                                <div class="i-mdi-cart-plus text-xl"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-purple-600 text-white py-2 rounded-lg font-medium hover:bg-purple-700 transition">
+                        <a href="produto.html">Comprar Agora</a>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80" alt="Tablet" class="w-full h-56 object-cover" />
+                <div class="p-5">
+                    <h3 class="font-bold text-lg text-gray-800">Tablet Uno Tab</h3>
+                    <p class="text-gray-500 text-sm mt-2 line-clamp-2">Perfeito para estudos e entretenimento. Tela Retina de 10 polegadas.</p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-2xl font-bold text-purple-700">R$ 1.050</span>
+                        <div class="flex gap-2">
+                            <button class="p-2 bg-gray-100 text-purple-700 rounded-lg hover:bg-purple-50">
+                                <div class="i-mdi-cart-plus text-xl"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-purple-600 text-white py-2 rounded-lg font-medium hover:bg-purple-700 transition">
+                        Comprar Agora
+                    </button>
+                </div>
+            </div>
+
+             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=1171&auto=format&fit=crop" alt="Notebook" class="w-full h-56 object-cover" />
+                <div class="p-5">
+                    <h3 class="font-bold text-lg text-gray-800">Notebook Pro</h3>
+                    <p class="text-gray-500 text-sm mt-2 line-clamp-2">Potência para profissionais. SSD de 512GB e tela 4K.</p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-2xl font-bold text-purple-700">R$ 2.300</span>
+                        <div class="flex gap-2">
+                            <button class="p-2 bg-gray-100 text-purple-700 rounded-lg hover:bg-purple-50">
+                                <div class="i-mdi-cart-plus text-xl"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-purple-600 text-white py-2 rounded-lg font-medium hover:bg-purple-700 transition">
+                        Comprar Agora
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-full bg-gray-900 text-gray-400 py-8 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <h4 class="text-white font-bold text-lg">UnoShop</h4>
+                <p class="text-sm mt-1">Sua loja favorita de eletrônicos.</p>
+            </div>
+            <p class="text-sm text-center">
+                © 2025 UnoCSS Shop — Yasmim e Pedro
+            </p>
+            <!-- Explicar a treta dos icones -->
+            <div class="flex gap-4">
+                <div class="i-mdi-instagram text-2xl hover:text-white cursor-pointer transition-colors"></div>
+                <div class="i-mdi-facebook text-2xl hover:text-white cursor-pointer transition-colors"></div>
+                <div class="i-mdi-twitter text-2xl hover:text-white cursor-pointer transition-colors"></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
